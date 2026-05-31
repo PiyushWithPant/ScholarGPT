@@ -118,8 +118,10 @@ def execute_rag_qa(retriever, user_question: str) -> str:
 
 #! TESTING
 
-# 1. Testing PDF loading and text splitting
+# if __name__ == "__main__":
 
-pdf_path = "data/pdf/rag_notes.pdf"  # Ensure this file exists in your directory
-embed_and_index_pdf(pdf_path)
+#     # 1. Testing PDF loading and text splitting
+
+#     pdf_path = "data/pdf/rag_notes.pdf"  # Ensure this file exists in your directory
+#     embed_and_index_pdf(pdf_path)
 

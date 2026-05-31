@@ -19,7 +19,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-4. 
+
 
 
 > By Piyush Pant (पियुष पंत)
