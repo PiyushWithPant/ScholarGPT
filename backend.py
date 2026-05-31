@@ -57,10 +57,9 @@ def embed_and_index_pdf(pdf_file_path: str):
         documents = text_chunks,
         embedding = google_emeddings,
         collection_name = "ScholarGPT_pdf_chunks"
-
     )
 
-    retriever = vector_db.as_retriever(search_kwargs={"k": 1})  # Retrieve top k relevant chunks
+    retriever = vector_db.as_retriever(search_kwargs={"k": 3})  # Retrieve top k relevant chunks
     return retriever
 
 

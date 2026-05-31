@@ -187,9 +187,9 @@ if uploaded_file:
 if "retriever" in st.session_state:
     st.markdown("### So where should we dive in first?")
     
-    # Check if user has depleted their explicit allowance of 3 prompts
-    if st.session_state["query_count"] >= 3:
-        st.warning("You have reached the session limit of 3 questions for this document.")
+    # Check if user has depleted their explicit allowance of prompts
+    if st.session_state["query_count"] >= 10:
+        st.warning("You have reached the session limit of questions for this document.")
     else:
         # Secure Form Input Guardrail with native text field automated value resetting
         # clear_on_submit=True clears out the question text field immediately upon clicking 'Ask'

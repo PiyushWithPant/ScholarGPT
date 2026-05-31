@@ -1,6 +1,6 @@
 # 📚 ScholarGPT
 
-ScholarGPT is a production-ready, zero-cost Retrieval-Augmented Generation (RAG) workspace designed to extract precise insights from dense scientific literature. By leveraging LangChain, Streamlit, and an in-memory ChromaDB vector store, the application creates an isolated semantic search matrix for any uploaded PDF, allowing users to execute deterministic Q&A without data persistence or cloud-hosting overhead.
+ScholarGPT is a production-ready, zero-cost Retrieval-Augmented Generation (RAG) workspace designed to extract precise insights from your personal & private research data. By leveraging LangChain, Streamlit, and an in-memory ChromaDB vector store, the application creates an isolated semantic search matrix for any uploaded PDF, allowing users to execute deterministic Q&A without data persistence or cloud-hosting overhead so your data remains safe completely.
 
 ---
 
@@ -9,7 +9,7 @@ ScholarGPT is a production-ready, zero-cost Retrieval-Augmented Generation (RAG)
 - **Orchestration:** LangChain Expression Language (LCEL)
 - **Vector Database:** ChromaDB (Transient, running entirely in-memory per user session)
 - **Embeddings Model:** Google AI Studio `gemini-embedding-001`
-- **Generative LLM:** Google AI Studio `gemini-2.0-flash` (Configured at `temperature=0` for anti-hallucination guardrails)
+- **Generative LLM:** Groq's `llama-3.3-70b-versatile` (Configured at `temperature=0` for anti-hallucination guardrails)
 
 ---
 
