@@ -11,6 +11,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # Component 3: Vector Math and Storage
+from langchain_groq import ChatGroq
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain_community.vectorstores import Chroma
 
@@ -78,7 +79,7 @@ def execute_rag_qa(retriever, user_question: str) -> str:
                 "1. Rely strictly on direct assertions explicitly stated in the context blocks.\n"
                 "2. If the answer is not present or cannot be completely proven by the blocks, respond exactly with: "
                 "'I cannot find the answer to that question within the provided research paper.'\n"
-                "3. Do not extrapolate, infer, or bring in outside scientific consensus or facts.\n\n"
+                "3. Do not extrapolate, infer, or bring in outside scientific consensus or facts. Also, keep final response limited to under 200 words.\n\n"
                 "RESEARCH PAPER CONTEXT BLOCKS:\n{context}"
             )
         ),
@@ -89,9 +90,14 @@ def execute_rag_qa(retriever, user_question: str) -> str:
     ])
 
 
-    llm = ChatGoogleGenerativeAI(
-        model = "gemini-2.0-flash",
-        temperature = 0.0,  # Deterministic output
+    # llm = ChatGoogleGenerativeAI(
+    #     model = "gemini-2.0-flash",
+    #     temperature = 0.0,  # Deterministic output
+    # )
+
+    llm = ChatGroq(
+        model="llama-3.3-70b-versatile", 
+        temperature=0.0,  # Deterministic output
     )
 
 
